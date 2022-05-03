@@ -1,0 +1,200 @@
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-gold: #c59d5f;
+
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+
+  --sekcja-width: 1100px;
+  --margines-sekcji: 130px;
+  --clr-szary-ciemny: rgb(26, 26, 26);
+  --clr-szary-jasny: rgb(38, 38, 38);
+  --clr-bialy-ciemny:rgb(217, 217, 217);
+  --clr-bialy-ciemny2:rgb(179, 179, 179);
+  --clr-bialy-jasny:rgb(230, 230, 230);
+  --clr-bialy-jasny2:rgb(217, 217, 217);
+  --clr-szary-sredni: rgb(30, 30, 30);
+
+  --nav_height:100px;
+
+}
+
+
+.section-center {
+    margin-left: 200px;
+    width: 80vw;
+    /* have to have a height */
+    height: 570px;
+    width: 1000px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .prev,.next{
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: var(--clr-white);
+    width: 80px;
+    height: 100%;
+    place-items: center;
+    border-color: transparent;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+
+  article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  article> img {
+    width: 100%;
+    height: 100%;
+  }
+
+  article.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  article.lastSlide {
+    transform: translateX(-100%);
+  }
+  article.nextSlide {
+    transform: translateX(100%);
+  }
+
+
+.buttony{
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.section-center:hover > .buttony{
+  opacity: 1;
+}
+
+
+.kreska{
+  background-color: black;
+  width: 90%;
+  height: 2px;
+}
+
+.tytuldiv{
+  height: 100px;
+  width: auto;
+  margin-left: 200px;
+  padding-left: 20px;
+}
+.tytul_glowny{
+  margin-top: 0;
+  font-size: 50px;
+  color: var(--clr-bialy-ciemny);
+  font-weight: 400;
+}
+
+.flex{
+  display: flex;
+  margin-bottom: 130px;
+}
+.calosc{
+  background-color: rgb(26, 26, 26);
+  height: auto;
+}
+
+.Opis_Glowny{
+  width: 1000px;
+  height: 150px;
+  margin-left: 200px;
+  
+}
+.Opis_Glowny > h2 {
+  color: var(--clr-bialy-jasny);
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.Opis{
+  width: 1000px;
+  height: auto;
+  margin-left: 200px;
+  padding-bottom: 200px;
+}
+
+.Opis >h1{
+  color: var(--clr-bialy-jasny2);
+  font-size: 20px;
+  font-weight: 600;
+}
+.Opis >a{
+  color: var(--clr-bialy-ciemny2);
+}
+
+.Dane{
+  right: 100px;
+  background-color: var(--clr-szary-sredni);
+  width: 400px;
+  height: calc(700px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--clr-bialy-ciemny);
+  position: sticky;
+  top: 120px;
+}
+
+.sticky{
+  position: absolute;
+  top: 200px;
+  min-height: 100vh;
+  right: 200px;
+}
+
